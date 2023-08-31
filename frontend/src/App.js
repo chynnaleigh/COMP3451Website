@@ -1,10 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import About from "./pages/About";
-import Login from "./pages/Login";
-import NoPage from "./pages/NoPage";
+import { Layout, Home, Profile, About, Login, Signup, NoPage  } from "./pages";
 
 const App = () => {
   return (
@@ -14,6 +9,7 @@ const App = () => {
           <Route path="about" element={<About />} />
           <Route path="profile" element={<Profile />} />
           <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
