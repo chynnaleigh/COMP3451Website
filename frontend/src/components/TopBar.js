@@ -1,29 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-const TopBar = ({pages}) => {
-  console.log("pages", pages);
+const TopBar = () => {
+  const pages = [
+    { pageName: "About", link: "/about" },
+  ];
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar className="bg-yellow-400" position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Website Title
-          </Typography>
+          <Link className="grow" to="/">
+          <Typography variant="h6">
+              Website Title
+            </Typography>
+          </Link>
           {pages.map((page) => (
-            <Button color="inherit">{page.pageName}</Button>
+            <Link key={page} to={page.link}>
+              <Button key={page} color="inherit">{page.pageName}</Button>
+            </Link>
           ))}
-          {pages.map((page) => (
-            <Button color="inherit">{page.pageName}</Button>
-          ))}
-          {pages.map((page) => (
-            <Button color="inherit">{page.pageName}</Button>
-          ))}
-          <Button className="ml-8 text-yellow-400" color="inherit" variant="outlined">Login</Button>
+          <Link to="/login">
+            <Button className="ml-8 text-yellow-600" color="inherit" variant="outlined">Login</Button>
+          </Link>
+          
         </Toolbar>
       </AppBar>
     </Box>

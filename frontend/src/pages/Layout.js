@@ -3,11 +3,10 @@ import TopBar from "../components/TopBar";
 
 const Layout = () => {
     
-    const pages = [{pageName: "About", link: "/about"}];
 
   return (
     <>
-      <TopBar pages={pages}></TopBar>
+      <TopBar></TopBar>
 
       <Outlet />
     </>
