@@ -2,15 +2,13 @@ import { Outlet, Link } from "react-router-dom";
 import TopBar from "../components/TopBar";
 
 const Layout = () => {
-    
+    return (
+        <>
+            <TopBar></TopBar>
 
-  return (
-    <>
-      <TopBar></TopBar>
-
-      <Outlet />
-    </>
-  )
+            <Outlet />
+        </>
+    );
 };
 
 export default Layout;

@@ -1,5 +1,11 @@
+import PageContainer from "../components/PageContainer";
+
 const About = () => {
-    return <div>About</div>
+    return (
+        <PageContainer>
+            <div>About</div>
+        </PageContainer>
+    );
 };
 
 export default About;
